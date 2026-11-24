@@ -84,8 +84,8 @@
     </author>
 
     <date/>
-    <area>Security</area>
-    <workgroup>Public-Key Infrastructure (X.509)</workgroup>
+    <area>OPS</area>
+    <workgroup>SIDROPS</workgroup>
 
     <abstract>
       <t>This document defines two X.509 v3 certificate extensions.  The
