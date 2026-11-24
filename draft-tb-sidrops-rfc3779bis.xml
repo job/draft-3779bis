@@ -4,7 +4,7 @@
      category="std"
      submissionType="IETF"
      consensus="true"
-     ipr="pre5378Trust200902"
+     ipr="trust200902"
      tocInclude="true"
      tocDepth="4"
      sortRefs="true"
