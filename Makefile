@@ -1,4 +1,4 @@
-NAME=draft-tb-sidrops-rfc3779bis
+NAME=draft-horse-sidrops-rfc3779bis
 
 .PHONY: all
 all: drafts
