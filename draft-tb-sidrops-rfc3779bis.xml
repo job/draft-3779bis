@@ -153,7 +153,7 @@
 
           <dt>initial octet:</dt>
           <dd>
-            the first octet in the value of a DER encoded BIT STRING <xref target="X.690"/>.
+            the first octet in the value of a DER encoded <tt>BIT STRING</tt> <xref target="X.690"/>.
           </dd>
 
           <dt>IP v4 address:</dt>
@@ -191,7 +191,7 @@
 
           <dt>subsequent octets:</dt>
           <dd>
-            the second through last octets in the value of a DER encoded BIT STRING <xref target="X.690"/>.
+            the second through last octets in the value of a DER encoded <tt>BIT STRING</tt> <xref target="X.690"/>.
           </dd>
 
           <dt>trust anchor:</dt>
@@ -256,8 +256,8 @@
           </t>
 
           <t>
-            An IP address or prefix is encoded in the IP address delegation extension as a DER-encoded ASN.1 BIT STRING containing the constant most-significant bits.
-            Recall <xref target="X.690"/> that the DER encoding of a BIT STRING consists of the BIT STRING type (0x03), followed by (an encoding of) the number of value octets, followed by the value.
+            An IP address or prefix is encoded in the IP address delegation extension as a DER-encoded ASN.1 <tt>BIT STRING</tt> containing the constant most-significant bits.
+            Recall <xref target="X.690"/> that the DER encoding of a <tt>BIT STRING</tt> consists of the <tt>BIT STRING</tt> type (0x03), followed by (an encoding of) the number of value octets, followed by the value.
             The value consists of an "initial octet" that specifies the number of unused bits in the last value octet, followed by the "subsequent octets" that contain the octets of the bit string.
             (For IP addresses, the encoding of the length will be just the length.)
           </t>
@@ -266,7 +266,7 @@
             In the case of a single address, all the bits are constant, so the bit string for an IPv4 address contains 32 bits.
             The subsequent octets in the DER-encoding of the address 10.5.0.4 are 0x0a 0x05 0x00 0x04.
             Since all the bits in the last octet are used, the initial octet is 0x00.
-            The octets in the DER-encoded BIT STRING is thus:
+            The octets in the DER-encoded <tt>BIT STRING</tt> is thus:
           </t>
 
           <artwork><![CDATA[
@@ -310,9 +310,9 @@ Type Len  Unused Bits ...
         <section anchor="sec-range-encoding">
           <name>Encoding of a Range of IP Addresses</name>
           <t>
-            While any contiguous range of IP addresses can be represented by a set of contiguous prefixes, a more concise representation is achieved by encoding the range as a SEQUENCE containing the lowest address and the highest address, where each address is encoded as a BIT STRING.
+            While any contiguous range of IP addresses can be represented by a set of contiguous prefixes, a more concise representation is achieved by encoding the range as a SEQUENCE containing the lowest address and the highest address, where each address is encoded as a <tt>BIT STRING</tt>.
             Within the SEQUENCE, the bit string representing the lowest address in the range is formed by removing all the least-significant zero-bits from the address, and the bit string representing the highest address in the range is formed by removing all the least-significant one-bits.
-            The DER BIT STRING encoding requires that all the unused bits in the last octet <bcp14>MUST</bcp14> be set to zero-bits.
+            The DER <tt>BIT STRING</tt> encoding requires that all the unused bits in the last octet <bcp14>MUST</bcp14> be set to zero-bits.
             Note that a prefix can always be expressed as a range, but a range cannot always be expressed as a prefix.
           </t>
 
@@ -505,7 +505,7 @@ IPAddress           ::= BIT STRING
 
             <t>
               where "|" represents concatenation.
-              Note that the octets in this representation (a.b.c.d | length for IPv4 or s:t:u:v:w:x:y:z | length for IPv6) are not the octets that are in the DER-encoded BIT STRING value.
+              Note that the octets in this representation (a.b.c.d | length for IPv4 or s:t:u:v:w:x:y:z | length for IPv6) are not the octets that are in the DER-encoded <tt>BIT STRING</tt> value.
               For example, given two addressPrefix:
             </t>
 
@@ -519,7 +519,7 @@ IP addr | length  DER encoding
 ]]></artwork>
 
             <t>
-              the prefix 10.32.0.0/12 <bcp14>MUST</bcp14> come before the prefix 10.64.0.0/16 since 32 is less than 64; whereas if one were to sort by the DER BIT STRINGs, the order would be reversed as the unused bits octet would sort in the opposite order.
+              the prefix 10.32.0.0/12 <bcp14>MUST</bcp14> come before the prefix 10.64.0.0/16 since 32 is less than 64; whereas if one were to sort by the DER <tt>BIT STRINGs</tt>, the order would be reversed as the unused bits octet would sort in the opposite order.
               Any pair of IPAddressOrRange choices in an extension <bcp14>MUST NOT</bcp14> overlap each other.
               Any contiguous address prefixes or ranges <bcp14>MUST</bcp14> be combined into a single range or, whenever possible, a single prefix.
             </t>
@@ -532,7 +532,7 @@ IP addr | length  DER encoding
             </t>
 
             <t>
-              This specification requires that any range of addresses that can be encoded as a prefix <bcp14>MUST</bcp14> be encoded using an IPAddress element (a BIT STRING), and any range that cannot be encoded as a prefix <bcp14>MUST</bcp14> be encoded using an IPAddressRange (a SEQUENCE containing two BIT STRINGs).
+              This specification requires that any range of addresses that can be encoded as a prefix <bcp14>MUST</bcp14> be encoded using an IPAddress element (a <tt>BIT STRING</tt>), and any range that cannot be encoded as a prefix <bcp14>MUST</bcp14> be encoded using an IPAddressRange (a SEQUENCE containing two <tt>BIT STRINGs</tt>).
               The following pseudo code illustrates how to select the encoding of a given range of addresses.
             </t>
 
@@ -556,8 +556,8 @@ ELSE the range MUST be encoded as an IPAddressRange
             </t>
 
             <t>
-              An IP address prefix is encoded as a BIT STRING.
-              The DER encoding of a BIT STRING uses the initial octet of the string to specify how many of the least-significant bits of the last subsequent octet are unused.
+              An IP address prefix is encoded as a <tt>BIT STRING</tt>.
+              The DER encoding of a <tt>BIT STRING</tt> uses the initial octet of the string to specify how many of the least-significant bits of the last subsequent octet are unused.
               The DER encoding specifies that these unused bits <bcp14>MUST</bcp14> be set to zero-bits.
             </t>
 
@@ -577,11 +577,11 @@ Encoding = 0x03 0x02  0x04  0x80
             <t>
               The addressRange element is of type IPAddressRange.
               The IPAddressRange type consists of a SEQUENCE containing a minimum (element min) and maximum (element max) IP address.
-              Each IP address is encoded as a BIT STRING.
+              Each IP address is encoded as a <tt>BIT STRING</tt>.
               The semantic interpretation of the minimum address in an IPAddressRange is that all the unspecified bits (for the full length of the IP address) are zero-bits.
               The semantic interpretation of the maximum address is that all the unspecified bits are one-bits.
-              The BIT STRING for the minimum address results from removing all the least-significant zero-bits from the minimum address.
-              The BIT STRING for the maximum address results from removing all the least-significant one-bits from the maximum address.
+              The <tt>BIT STRING</tt> for the minimum address results from removing all the least-significant zero-bits from the minimum address.
+              The <tt>BIT STRING</tt> for the maximum address results from removing all the least-significant one-bits from the maximum address.
             </t>
 
             <t>
@@ -772,7 +772,7 @@ ASId                ::= INTEGER
           <section anchor="sec-ASId">
             <name>Type ASId</name>
             <t>
-              The ASId type is an INTEGER.
+              The ASId type is an <tt>INTEGER</tt>.
             </t>
           </section>
         </section>
@@ -1025,7 +1025,7 @@ IPv4 unicast address prefixes
         </li>
 
         <li>
-          Prefix 2 <bcp14>MUST</bcp14> precede prefix 3 even though the number of octets (4) in the BIT STRING encoding of prefix 2 is larger than the number of octets (3) in the BIT STRING encoding of prefix 3.
+          Prefix 2 <bcp14>MUST</bcp14> precede prefix 3 even though the number of octets (4) in the <tt>BIT STRING</tt> encoding of prefix 2 is larger than the number of octets (3) in the <tt>BIT STRING</tt> encoding of prefix 3.
         </li>
 
         <li>
@@ -1039,7 +1039,7 @@ IPv4 unicast address prefixes
         </li>
 
         <li>
-          The range formed by prefixes 4 and 5 <bcp14>MUST</bcp14> precede prefix 6 even though the SEQUENCE tag for a range (30) is larger than the tag for the BIT STRING (03) used to encode prefix 6.
+          The range formed by prefixes 4 and 5 <bcp14>MUST</bcp14> precede prefix 6 even though the SEQUENCE tag for a range (30) is larger than the tag for the <tt>BIT STRING</tt> (03) used to encode prefix 6.
         </li>
 
         <li>
