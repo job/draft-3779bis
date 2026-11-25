@@ -130,7 +130,7 @@
           <dd>
             the transfer of custodianship of a resource to an intermediate organization (see <xref target="RFC2050"/>).
           </dd>
-	  
+ 
           <dt>assign:</dt>
           <dd>
             the transfer of custodianship of a resource to an end organization (see <xref target="RFC2050"/>).
@@ -240,7 +240,8 @@
           </t>
 
           <t>
-            An IPv6 address is a 128-bit quantity that is written as eight hexadecimal numbers, each in the range 0 through ffff, separated by a semicolon (":"); 2001:0:200:3:0:0:0:1 is an example of an IPv6 address.  IPv6 addresses frequently have adjacent fields whose value is 0.
+            An IPv6 address is a 128-bit quantity that is written as eight hexadecimal numbers, each in the range 0 through ffff, separated by a semicolon (":"); 2001:0:200:3:0:0:0:1 is an example of an IPv6 address.
+            IPv6 addresses frequently have adjacent fields whose value is 0.
             One such group of 0 fields may be abbreviated by two semicolons ("::").
             The previous example may thus be represented by 2001:0:200:3::1.
           </t>
@@ -365,7 +366,8 @@ Type Len  Unused Bits ...
 ]]></artwork>
 
           <t>
-            Note that for IP addresses the number of trailing zero-bits is significant.  For example, the DER-encoding of 10.64/12:
+            Note that for IP addresses the number of trailing zero-bits is significant.
+            For example, the DER-encoding of 10.64/12:
           </t>
 
           <artwork><![CDATA[
@@ -414,7 +416,8 @@ id-pe    OBJECT IDENTIFIER ::= { id-pkix 1 }
           <t>
             This extension <bcp14>SHOULD</bcp14> be CRITICAL.
             The intended use of this extension is to connote a right-to-use for the block(s) of IP addresses identified in the extension.
-            A CA marks the extension as CRITICAL to convey the notion that a relying party <bcp14>MUST</bcp14> understand the semantics of the extension to make use of the certificate for the purpose it was issued.  Newly created applications that use certificates containing this extension are expected to recognize the extension.
+            A CA marks the extension as CRITICAL to convey the notion that a relying party <bcp14>MUST</bcp14> understand the semantics of the extension to make use of the certificate for the purpose it was issued.
+            Newly created applications that use certificates containing this extension are expected to recognize the extension.
           </t>
         </section>
 
@@ -462,7 +465,8 @@ IPAddress           ::= BIT STRING
           <section anchor="sec-addressFamily">
             <name>Element addressFamily</name>
             <t>
-              The addressFamily element is an OCTET STRING containing a two-octet Address Family Identifier (AFI), in network byte order, optionally followed by a one-octet Subsequent Address Family Identifier (SAFI).  AFIs and SAFIs are specified in <xref target="IANA-AFI"/> and <xref target="IANA-SAFI"/>, respectively.
+              The addressFamily element is an OCTET STRING containing a two-octet Address Family Identifier (AFI), in network byte order, optionally followed by a one-octet Subsequent Address Family Identifier (SAFI).
+              AFIs and SAFIs are specified in <xref target="IANA-AFI"/> and <xref target="IANA-SAFI"/>, respectively.
             </t>
 
             <t>
@@ -1203,7 +1207,9 @@ IPv4 unicast address prefixes
 
         <li>
           <t>
-            from <xref target="RFC3281" section="4.5" sectionFormat="of"/>: "an AC issuer, MUST NOT also be a PKC issuer.  That is, an AC issuer cannot be a CA as well."
+            from <xref target="RFC3281" section="4.5" sectionFormat="of"/>:
+              "an AC issuer, MUST NOT also be a PKC issuer.
+               That is, an AC issuer cannot be a CA as well."
           </t>
 
           <t>
@@ -1223,7 +1229,8 @@ IPv4 unicast address prefixes
 
         <li>
           <t>
-            from <xref target="RFC3281" section="5" sectionFormat="of"/>: "4.  The AC issuer MUST be directly trusted as an AC issuer (by configuration or otherwise)."
+            from <xref target="RFC3281" section="5" sectionFormat="of"/>:
+              "4.  The AC issuer MUST be directly trusted as an AC issuer (by configuration or otherwise)."
           </t>
 
           <t>
