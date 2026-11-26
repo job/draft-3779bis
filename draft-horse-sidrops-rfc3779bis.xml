@@ -717,9 +717,9 @@ ASId                ::= INTEGER
           <section anchor="sec-ASIdentifiers">
             <name>Type ASIdentifiers</name>
             <t>
-              The ASIdentifiers type is a SEQUENCE containing one or more forms of autonomous system identifiers -- AS numbers (in the asnum element) or routing domain identifiers (in the rdi element).
+              The ASIdentifiers type is a SEQUENCE containing one or more forms of autonomous system identifiers -- AS numbers (in the asnum element) or Routing Domain Identifiers (in the rdi element).
               When the ASIdentifiers type contains multiple forms of identifiers, the asnum entry <bcp14>MUST</bcp14> precede the rdi entry.
-              AS numbers are used by BGP, and routing domain identifiers are specified in the IDRP <xref target="ISO10747"/>.
+              AS numbers are used by BGP, and Routing Domain Identifiers are specified in the IDRP <xref target="ISO10747"/>.
             </t>
           </section>
 
@@ -1116,7 +1116,7 @@ IPv4 unicast address prefixes
     <section anchor="app-as-example">
       <name>Example of an AS Identifier Delegation Extension</name>
       <t>
-        An extension that specifies AS numbers 135, 3000 to 3999, and 5001, and which inherits all routing domain identifiers from the issuer's certificate would be (in hexadecimal):
+        An extension that specifies AS numbers 135, 3000 to 3999, and 5001, and which inherits all Routing Domain Identifiers from the issuer's certificate would be (in hexadecimal):
       </t>
 
       <artwork><![CDATA[
