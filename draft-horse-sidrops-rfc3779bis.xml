@@ -127,7 +127,7 @@
           This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
         </t>
         <ul>
-          <li>Incorporated errata 1886 and 2537 for RFC 3779</li>
+          <li>Incorporated errata 1886, 2537, and 6792 for RFC 3779</li>
         </ul>
       </section>
 
@@ -1079,7 +1079,7 @@ IPv4 unicast address prefixes
                                         IPAddressOrRange
                03 02 00 0a                addressPrefix    10/8
                                         IPAddressOrRange
-               03 03 04 b010              addressPrefix    172.16/12
+               03 03 04 ac10              addressPrefix    172.16/12
                                       } -- addressesOrRanges
                                   } -- IPAddressFamily
          30 07                    IPAddressFamily {
@@ -1092,7 +1092,7 @@ IPv4 unicast address prefixes
                                     IPAddressChoice
             30 09                     addressesOrRanges {
                                         IPAddressOrRange
-               03 07 00 200100000002      addressPrefix   2001:0:2/47
+               03 07 00 200100000002      addressPrefix   2001:0:2::/48
                                       } -- addressesOrRanges
                                   } -- IPAddressFamily
                                 } -- IPAddrBlocks
