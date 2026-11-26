@@ -127,7 +127,7 @@
           This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
         </t>
         <ul>
-          <li>Incorporated errata 836, 1886, 2537, 6792, 7653 for RFC 3779</li>
+          <li>Incorporated errata 836, 1886, 2537, 6792, 7653, and 9314 for RFC 3779</li>
         </ul>
       </section>
 
@@ -486,7 +486,7 @@ IPAddress           ::= BIT STRING
             </t>
 
             <t>
-              If no authorization is being granted for a particular AFI and optional SAFI, then there <bcp14>MUST NOT</bcp14> be an IPAddressFamily member for that AFI/SAFI in the IPAddrBlocks SEQUENCE.
+              In Certification Authority (CA) certificates, if no authorization is being granted for a particular AFI and optional SAFI, then there <bcp14>MUST NOT</bcp14> be an IPAddressFamily member for that AFI/SAFI in the IPAddrBlocks SEQUENCE.
             </t>
 
             <t>
@@ -629,6 +629,8 @@ Encoding = SEQUENCE {
           Certification path validation of a certificate containing the IP address delegation extension requires additional processing.
           As each certificate in a path is validated, the IP addresses in the IP address delegation extension of that certificate <bcp14>MUST</bcp14> be subsumed by IP addresses in the IP address delegation extension in the issuer's certificate.
           Validation <bcp14>MUST</bcp14> fail when this is not the case.
+          In end-entity (EE) certificates, an IPAddressFamily containing an inherit element for an AFI and optional SAFI which is not contained in the IP address delegation extension in the issuer's certificate <bcp14>MUST</bcp14> be ignored (i.e., treated as absent) for the purpose of certification path validation.
+          If the aforementioned elimination process results in an empty IPAddrBlocks sequence, the IP address delegation extension in the EE certificate <bcp14>MUST</bcp14> be ignored (i.e., treated as absent) for the purpose of certification path validation.
           A certificate that is a trust anchor for certification path validation of certificates containing the IP address delegation extension, as well as all certificates along the path, <bcp14>MUST</bcp14> each contain the IP address delegation extension.
           The initial set of allowed address ranges is taken from the trust anchor certificate.
         </t>
@@ -735,7 +737,7 @@ ASId                ::= INTEGER
             <name>Element inherit</name>
             <t>
               If the ASIdentifierChoice choice contains the inherit element, then the set of authorized AS identifiers is taken from the issuer's certificate, or from the issuer's issuer's certificate, recursively, until a certificate containing an ASIdentifierChoice containing an asIdsOrRanges element is located.
-              If no authorization is being granted for a particular form of AS identifier, then there <bcp14>MUST NOT</bcp14> be a corresponding asnum/rdi member in the ASIdentifiers sequence.
+              In CA certificates, if no authorization is being granted for a particular form of AS identifier, then there <bcp14>MUST NOT</bcp14> be a corresponding asnum/rdi member in the ASIdentifiers sequence.
             </t>
           </section>
 
@@ -801,6 +803,8 @@ ASId                ::= INTEGER
           Certification path validation of a certificate containing the autonomous system identifier delegation extension requires additional processing.
           As each certificate in a path is validated, the AS identifiers in the autonomous system identifier delegation extension of that certificate <bcp14>MUST</bcp14> be subsumed by the AS identifiers in the autonomous system identifier delegation extension in the issuer's certificate.
           Validation <bcp14>MUST</bcp14> fail when this is not the case.
+          In EE certificates, an ASIdentifierChoice containing an inherit element for an autonomous system or Routing Domain Identifier which is not contained in the AS identifier delegation extension in the issuer's certificate <bcp14>MUST</bcp14> be ignored (i.e., treated as absent) for the purpose of certification path validation.
+          If the aforementioned elimination process results in an empty ASIdentifiers sequence, the AS identifier delegation extension in the EE certificate <bcp14>MUST</bcp14> be ignored (i.e., treated as absent) for the purpose of certification path validation.
           A certificate that is a trust anchor for certification path validation of certificates containing the autonomous system identifier delegation extension, as well as all certificates along the path, <bcp14>MUST</bcp14> each contain the autonomous system identifier delegation extension.
           The initial set of allowed AS identifiers is taken from the trust anchor certificate.
         </t>
