@@ -900,9 +900,6 @@ IPAddrAndASCertExtn { iso(1) identified-organization(3) dod(6)
          id-mod-ip-addr-and-as-ident(30) }
     DEFINITIONS EXPLICIT TAGS ::=
 BEGIN
-     -- Copyright (C) The Internet Society (2004). This    --
-     -- version of this ASN.1 module is part of RFC 3779;  --
-     -- see the RFC itself for full legal notices.         --
 
 -- EXPORTS ALL --
 
