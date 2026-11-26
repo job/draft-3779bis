@@ -127,6 +127,7 @@
           This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
         </t>
         <ul>
+          <li>Incorporated erratum 1886 for RFC 3779</li>
         </ul>
       </section>
 
@@ -255,9 +256,9 @@
           </t>
 
           <t>
-            An IPv6 address is a 128-bit quantity that is written as eight hexadecimal numbers, each in the range 0 through ffff, separated by a semicolon (":"); 2001:0:200:3:0:0:0:1 is an example of an IPv6 address.
+            An IPv6 address is a 128-bit quantity that is written as eight hexadecimal numbers, each in the range 0 through ffff, separated by a colon (":"); 2001:0:200:3:0:0:0:1 is an example of an IPv6 address.
             IPv6 addresses frequently have adjacent fields whose value is 0.
-            One such group of 0 fields may be abbreviated by two semicolons ("::").
+            One such group of 0 fields may be abbreviated by two colons ("::").
             The previous example may thus be represented by 2001:0:200:3::1.
           </t>
 
@@ -837,8 +838,9 @@ ASId                ::= INTEGER
           <contact fullname="Charles Gardiner"/>,
           <contact fullname="Russ Housley"/>,
           <contact fullname="James Manger"/>,
+          <contact fullname="Jim Schaad"/>,
           and
-          <contact fullname="Jim Schaad"/>.
+          <contact fullname="Charles Bobo"/>.
       </t>
     </section>
   </middle>
