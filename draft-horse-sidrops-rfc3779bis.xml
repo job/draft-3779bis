@@ -127,7 +127,7 @@
           This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
         </t>
         <ul>
-          <li>Incorporated errata 1886, 2537, and 6792 for RFC 3779</li>
+          <li>Incorporated errata 836, 1886, 2537, and 6792 for RFC 3779</li>
         </ul>
       </section>
 
@@ -719,7 +719,7 @@ ASId                ::= INTEGER
             <t>
               The ASIdentifiers type is a SEQUENCE containing one or more forms of autonomous system identifiers -- AS numbers (in the asnum element) or routing domain identifiers (in the rdi element).
               When the ASIdentifiers type contains multiple forms of identifiers, the asnum entry <bcp14>MUST</bcp14> precede the rdi entry.
-              AS numbers are used by BGP, and routing domain identifiers are specified in the IDRP <xref target="RFC1142"/>.
+              AS numbers are used by BGP, and routing domain identifiers are specified in the IDRP <xref target="ISO10747"/>.
             </t>
           </section>
 
@@ -835,8 +835,9 @@ ASId                ::= INTEGER
           <contact fullname="Russ Housley"/>,
           <contact fullname="James Manger"/>,
           <contact fullname="Jim Schaad"/>,
+          <contact fullname="Charles Bobo"/>,
           and
-          <contact fullname="Charles Bobo"/>.
+          <contact fullname="Randy Bush"/>.
       </t>
     </section>
   </middle>
@@ -876,13 +877,24 @@ ASId                ::= INTEGER
           <seriesInfo name="ITU-T Recommendation" value="X.690"/>
           <seriesInfo name="ISO/IEC" value="8825-1:1998"/>
         </reference>
+
+        <reference anchor="ISO10747" target="https://www.iso.org/standard/21417.html" quoteTitle="true" derivedAnchor="ISO10747">
+          <front>
+            <title>Information technology - Telecommunications and information exchange between systems - Protocol for exchange of inter-domain routeing information among intermediate systems to support forwarding of ISO 8473 PDUs</title>
+            <author>
+              <organization showOnFrontPage="true">ISO/IEC</organization>
+            </author>
+            <date year="1994" month="October"/>
+          </front>
+          <seriesInfo name="ISO/IEC" value="10747:1994"/>
+        </reference>
+
       </references>
 
       <references>
         <name>Informative References</name>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.791.xml"/>
-        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.1142.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.1771.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.1930.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2050.xml"/>
