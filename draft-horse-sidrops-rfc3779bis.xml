@@ -719,7 +719,7 @@ ASId                ::= INTEGER
             <t>
               The ASIdentifiers type is a SEQUENCE containing one or more forms of autonomous system identifiers -- AS numbers (in the asnum element) or Routing Domain Identifiers (in the rdi element).
               When the ASIdentifiers type contains multiple forms of identifiers, the asnum entry <bcp14>MUST</bcp14> precede the rdi entry.
-              AS numbers are used by BGP, and Routing Domain Identifiers are specified in the IDRP <xref target="ISO10747"/>.
+              AS numbers are used by BGP, and Routing Domain Identifiers are specified in the OSI Inter-Domain Routing Protocol <xref target="ISO10747"/>.
             </t>
           </section>
 
