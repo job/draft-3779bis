@@ -127,7 +127,7 @@
           This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
         </t>
         <ul>
-          <li>Incorporated erratum 1886 for RFC 3779</li>
+          <li>Incorporated errata 1886 and 2537 for RFC 3779</li>
         </ul>
       </section>
 
@@ -619,10 +619,6 @@ Encoding = SEQUENCE {
      max    0x03 0x02  0x04  0x80
            }
 ]]></artwork>
-
-            <t>
-              To simplify the comparison of IP address blocks when performing certification path validation, a maximum IP address <bcp14>MUST</bcp14> contain at least one bit whose value is 1, i.e., the subsequent octets may not be omitted nor all zero.
-            </t>
           </section>
         </section>
       </section>
