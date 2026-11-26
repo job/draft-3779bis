@@ -2,6 +2,7 @@
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      docName="draft-horse-sidrops-rfc3779bis-00"
      category="std"
+     obsoletes="3779"
      submissionType="IETF"
      consensus="true"
      ipr="trust200902"
@@ -93,6 +94,7 @@
         The first binds a list of IP address blocks, or prefixes, to the subject of a certificate.
         The second binds a list of autonomous system identifiers to the subject of a certificate.
         These extensions may be used to convey the authorization of the subject to use the IP addresses and autonomous system identifiers contained in the extensions.
+        This document obsoletes RFC 3779.
       </t>
     </abstract>
   </front>
@@ -118,6 +120,22 @@
         Second, they achieve the minimal size encoding of the information.
         Third, they allow relying parties to use one-pass algorithms when performing certification path validation; in particular, the relying parties do not need to sort the information, or to implement extra code in the subset checking algorithms to handle several boundary cases (adjacent, overlapping, or subsumed ranges).
       </t>
+
+      <section anchor="changes-rfc3779">
+        <name>Changes from RFC 3779</name>
+        <t>
+          This section summarizes the significant changes between <xref target="RFC3779"/> and this document.
+        </t>
+        <ul>
+        </ul>
+      </section>
+
+      <section>
+        <name>Requirements Language</name>
+        <t>
+          The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 <xref target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in all capitals, as shown here.
+        </t>
+      </section>
 
       <section anchor="sec-terminology">
         <name>Terminology</name>
@@ -200,9 +218,6 @@
           </dd>
         </dl>
 
-        <t>
-          The keywords <bcp14>MUST</bcp14>, <bcp14>MUST NOT</bcp14>, <bcp14>REQUIRED</bcp14>, <bcp14>SHALL</bcp14>, <bcp14>SHALL NOT</bcp14>, <bcp14>SHOULD</bcp14>, <bcp14>SHOULD NOT</bcp14>, <bcp14>RECOMMENDED</bcp14>, and <bcp14>MAY</bcp14>, and <bcp14>OPTIONAL</bcp14>, when they appear in this document, are to be interpreted as described in <xref target="RFC2119"/>.
-        </t>
       </section>
     </section>
 
@@ -851,7 +866,8 @@ ASId                ::= INTEGER
 
 <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
 <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3280.xml"/>
-
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3779.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
 
         <reference anchor="X.690">
           <front>
